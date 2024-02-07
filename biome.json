@@ -3,8 +3,31 @@
   "organizeImports": {
     "enabled": true
   },
+  "files": {
+    "ignore": ["./**/dist/**"]
+  },
+  "formatter": {
+    "ignore": ["./**/dist/**", "./vscode/**", "./**/.pnpm-store/**", "./**/pnpm-lock.yaml"],
+    "indentStyle": "space",
+    "lineWidth": 100
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "single",
+      "trailingComma": "all",
+      "indentStyle": "tab"
+    }
+  },
+  "overrides": [
+    {
+      "include": ["*.{css,html}"],
+      "formatter": {
+        "indentStyle": "tab"
+      }
+    }
+  ],
   "linter": {
-    "enabled": true,
+    "enabled": false,
     "rules": {
       "recommended": true
     }
