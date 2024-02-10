@@ -1,38 +1,26 @@
-import { useState } from 'react';
-import viteLogo from '/vite.svg';
+import { StrictMode } from 'react';
 import './App.css';
-import reactLogo from './assets/react.svg';
+import { RouterProvider, createRouter } from '@tanstack/react-router';
+
+// Import generated route tree
+import { routeTree } from './routeTree.gen';
+
+// Create a new router instance
+const router = createRouter({ routeTree });
+
+// Register the router instance for type safety
+declare module '@tanstack/react-router' {
+	interface Register {
+		router: typeof router;
+	}
+}
 
 function App() {
-	const [count, setCount] = useState(0);
-
 	return (
 		<>
-			<div>
-				<a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-					<img src={viteLogo} className="logo" alt="Vite logo" />
-				</a>
-				<a href="https://react.dev" target="_blank" rel="noreferrer">
-					<img src={reactLogo} className="logo react" alt="React logo" />
-				</a>
-			</div>
-			<h1>Vite + React</h1>
-			<div className="card">
-				<button
-					onClick={() => {
-						setCount((count) => {
-							return count + 1;
-						});
-					}}
-				>
-					count is {count}
-				</button>
-				<p>
-					Edit <code>src/App.tsx</code> and save to test HMR
-				</p>
-				<p>Edited</p>
-			</div>
-			<p className="read-the-docs">Click on the Vite and React logos to learn more</p>
+			<StrictMode>
+				<RouterProvider router={router} />
+			</StrictMode>
 		</>
 	);
 }

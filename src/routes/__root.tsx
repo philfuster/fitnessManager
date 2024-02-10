@@ -1,5 +1,5 @@
-import { Outlet, createRootRoute } from '@tanstack/react-router';
-import React from 'react';
+import { Link, Outlet, createRootRoute } from '@tanstack/react-router';
+import React, { Suspense } from 'react';
 
 export const Route = createRootRoute({
 	component: RootComponent,
@@ -17,10 +17,19 @@ const TanStackRouterDevtools =
 export function RootComponent() {
 	return (
 		<>
-			<div>
-				<h1>I am the root route. Roar</h1>
+			<div className="p-2 flex gap-2">
+				<Link to="/" className="[&.active]:font-bold">
+					Home
+				</Link>{' '}
+				<Link to="/about" className="[&.active]:font-bold">
+					About
+				</Link>
 			</div>
+			<hr />
 			<Outlet />
+			<Suspense>
+				<TanStackRouterDevtools />
+			</Suspense>
 		</>
 	);
 }
