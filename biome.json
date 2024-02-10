@@ -1,10 +1,10 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.5.3/schema.json",
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
   "organizeImports": {
     "enabled": true
   },
   "files": {
-    "ignore": ["./**/dist/**"]
+    "ignore": ["./**/dist/**", "./**/pnpm-lock.yaml", "./src/routeTree.gen.ts"]
   },
   "formatter": {
     "ignore": ["./**/dist/**", "./vscode/**", "./**/.pnpm-store/**", "./**/pnpm-lock.yaml"],
@@ -27,7 +27,7 @@
     }
   ],
   "linter": {
-    "enabled": false,
+    "enabled": true,
     "rules": {
       "recommended": true
     }
