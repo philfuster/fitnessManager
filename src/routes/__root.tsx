@@ -1,12 +1,7 @@
-import {
-	Link,
-	Outlet,
-	createRootRoute,
-	createRoute,
-	lazyRouteComponent,
-} from '@tanstack/react-router';
+import { Link, Outlet, createRootRoute, createRoute } from '@tanstack/react-router';
 import React, { Suspense } from 'react';
 
+// #region create routes
 export const rootRoute = createRootRoute({
 	component: RootComponent,
 });
@@ -22,15 +17,9 @@ const indexRoute = createRoute({
 }).lazy(() => import('./index.lazy').then((d) => d.Route));
 
 export const routeTree = rootRoute.addChildren([aboutRoute, indexRoute]);
+// #endregion
 
-const TanStackRouterDevtools =
-	import.meta.env.MODE === 'production'
-		? () => null // render nothing in production
-		: React.lazy(() =>
-				import('@tanstack/router-devtools').then((res) => ({
-					default: res.TanStackRouterDevtools,
-				})),
-		  );
+const TanStackRouterDevtools = getTanStackRouterDevTools();
 
 export function RootComponent() {
 	return (
@@ -50,4 +39,17 @@ export function RootComponent() {
 			</Suspense>
 		</>
 	);
+}
+
+/**
+ * Lazy load the router devtools in development mode.
+ */
+function getTanStackRouterDevTools() {
+	return import.meta.env.MODE === 'production'
+		? () => null // render nothing in production
+		: React.lazy(() =>
+				import('@tanstack/router-devtools').then((res) => ({
+					default: res.TanStackRouterDevtools,
+				})),
+		  );
 }
