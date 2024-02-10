@@ -1,5 +1,6 @@
 import { Link, Outlet, createRootRoute, createRoute } from '@tanstack/react-router';
 import React, { Suspense } from 'react';
+import { exerciseRouteTree } from './exercise';
 
 // #region create routes
 export const rootRoute = createRootRoute({
@@ -9,14 +10,14 @@ export const rootRoute = createRootRoute({
 const aboutRoute = createRoute({
 	getParentRoute: () => rootRoute,
 	path: '/about',
-}).lazy(() => import('./about.lazy').then((d) => d.Route));
+}).lazy(() => import('./root/about.lazy').then((d) => d.Route));
 
 const indexRoute = createRoute({
 	getParentRoute: () => rootRoute,
 	path: '/',
-}).lazy(() => import('./index.lazy').then((d) => d.Route));
+}).lazy(() => import('./root/index.lazy').then((d) => d.Route));
 
-export const routeTree = rootRoute.addChildren([aboutRoute, indexRoute]);
+export const routeTree = rootRoute.addChildren([aboutRoute, indexRoute, exerciseRouteTree]);
 // #endregion
 
 const TanStackRouterDevtools = getTanStackRouterDevTools();
@@ -24,18 +25,23 @@ const TanStackRouterDevtools = getTanStackRouterDevTools();
 export function RootComponent() {
 	return (
 		<>
-			<div className="p-2 flex gap-2">
-				<Link to="/" className="[&.active]:font-bold">
-					Home
-				</Link>{' '}
-				<Link to="/about" className="[&.active]:font-bold">
-					About
-				</Link>
+			<div id="page">
+				<header id="header">
+					<Link to="/" className="[&.active]:font-bold">
+						Home
+					</Link>{' '}
+					<Link to="/about" className="[&.active]:font-bold">
+						About
+					</Link>{' '}
+					<Link to="/exercise" className="[&.active]:font-bold">
+						Exercise
+					</Link>
+				</header>
+				<hr />
+				<Outlet />
 			</div>
-			<hr />
-			<Outlet />
 			<Suspense>
-				<TanStackRouterDevtools />
+				<TanStackRouterDevtools position="bottom-right" />
 			</Suspense>
 		</>
 	);
