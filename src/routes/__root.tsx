@@ -1,9 +1,27 @@
-import { Link, Outlet, createRootRoute } from '@tanstack/react-router';
+import {
+	Link,
+	Outlet,
+	createRootRoute,
+	createRoute,
+	lazyRouteComponent,
+} from '@tanstack/react-router';
 import React, { Suspense } from 'react';
 
-export const Route = createRootRoute({
+export const rootRoute = createRootRoute({
 	component: RootComponent,
 });
+
+const aboutRoute = createRoute({
+	getParentRoute: () => rootRoute,
+	path: '/about',
+}).lazy(() => import('./about.lazy').then((d) => d.Route));
+
+const indexRoute = createRoute({
+	getParentRoute: () => rootRoute,
+	path: '/',
+}).lazy(() => import('./index.lazy').then((d) => d.Route));
+
+export const routeTree = rootRoute.addChildren([aboutRoute, indexRoute]);
 
 const TanStackRouterDevtools =
 	import.meta.env.MODE === 'production'
