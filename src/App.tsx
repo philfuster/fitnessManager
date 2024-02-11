@@ -1,5 +1,4 @@
 import { StrictMode } from 'react';
-import './App.css';
 import { RouterProvider, createRouter } from '@tanstack/react-router';
 
 import { routeTree } from './routes/__root.tsx';
