@@ -1,7 +1,10 @@
-import { Link, Outlet, createRootRoute, createRoute } from '@tanstack/react-router';
-import React, { Suspense } from 'react';
-import { exerciseRouteTree } from './exercise';
-import '../styles/style.css';
+import { Link, Outlet, createRootRoute } from '@tanstack/react-router';
+import React from 'react';
+import { Suspense } from 'react';
+
+export const rootRoute = createRootRoute({
+	component: RootComponent,
+});
 
 const TanStackRouterDevtools = getTanStackRouterDevTools();
 
@@ -19,6 +22,9 @@ export function RootComponent() {
 					<Link to="/exercise" className="[&.active]:font-bold">
 						Exercise
 					</Link>
+					<Link to="/roadmap" className="[&.active]:font-bold">
+						Roadmap
+					</Link>
 				</header>
 				<hr />
 				<main>
@@ -34,24 +40,6 @@ export function RootComponent() {
 		</>
 	);
 }
-
-// #region create routes
-export const rootRoute = createRootRoute({
-	component: RootComponent,
-});
-
-const aboutRoute = createRoute({
-	getParentRoute: () => rootRoute,
-	path: '/about',
-}).lazy(() => import('./root/about.lazy').then((d) => d.Route));
-
-const indexRoute = createRoute({
-	getParentRoute: () => rootRoute,
-	path: '/',
-}).lazy(() => import('./root/index.lazy').then((d) => d.Route));
-
-export const routeTree = rootRoute.addChildren([aboutRoute, indexRoute, exerciseRouteTree]);
-// #endregion
 
 /**
  * Lazy load the router devtools in development mode.

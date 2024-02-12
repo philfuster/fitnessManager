@@ -1,5 +1,5 @@
 import { createRoute } from '@tanstack/react-router';
-import { rootRoute } from '../__root';
+import { rootRoute } from '../routeTree';
 
 const exerciseRoute = createRoute({
 	getParentRoute: () => rootRoute,
