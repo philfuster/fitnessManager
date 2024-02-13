@@ -11,7 +11,7 @@ const TanStackRouterDevtools = getTanStackRouterDevTools();
 export function RootComponent() {
 	return (
 		<>
-			<div className="grid-wrapper">
+			<div className="layout-grid">
 				<header>
 					<Link to="/" className="[&.active]:font-bold">
 						Home

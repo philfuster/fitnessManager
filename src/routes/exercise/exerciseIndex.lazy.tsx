@@ -6,8 +6,8 @@ export const Route = createLazyRoute('/exercise')({
 
 function Index() {
 	return (
-		<div className="p-2">
-			<h3>Exercises!</h3>
+		<div>
+			<h1>Exercises!</h1>
 			<ul>
 				<li>Push Ups</li>
 				<li>Sit Ups</li>

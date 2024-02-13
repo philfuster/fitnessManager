@@ -7,7 +7,7 @@ export const Route = createLazyRoute('/about')({
 function About() {
 	return (
 		<>
-			<h1 className="p-2">Hello from About!</h1>
+			<h1>About</h1>
 		</>
 	);
 }

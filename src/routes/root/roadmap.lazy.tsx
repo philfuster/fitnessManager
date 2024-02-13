@@ -5,13 +5,13 @@ export const Route = createLazyRoute('/roadmap')({ component: Roadmap });
 function Roadmap() {
 	return (
 		<>
-			<h2>Fitness Manager's Roadmap</h2>
-			<h3>Complete</h3>
+			<h1>Fitness Manager's Roadmap</h1>
+			<h2>Complete</h2>
 			<ul>
 				<li>Basic UI</li>
 				<li>Basic Routing</li>
 			</ul>
-			<h3>On the Roadmap</h3>
+			<h2>On the Roadmap</h2>
 			<ul>
 				<li>Create Workout Template</li>
 				<li>Add Exercises to Workout Templates</li>

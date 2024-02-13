@@ -1,12 +1,12 @@
 @layer layout {
 	/* #region Grid Wrapper */
-	.grid-wrapper {
+	.layout-grid {
 		display: grid;
-		grid-template-columns: 200px 1fr 150px;
-		grid-template-rows: 4rem 1fr 5rem;
+		grid-template-columns: 1fr;
+		grid-template-rows: 4rem 1fr;
 		grid-template-areas:
-			"header header header"
-			". main .";
+			"header"
+			"main";
 		min-height: 100%;
 	}
 

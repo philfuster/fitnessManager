@@ -7,7 +7,7 @@ export const Route = createLazyRoute('/')({
 function Index() {
 	return (
 		<>
-			<h2>Welcome to Fitness Manager</h2>
+			<h1>Welcome to Fitness Manager</h1>
 			<p>This application is meant for tracking your fitness journey.</p>
 			<p>You can:</p>
 			<ul>
