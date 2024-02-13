@@ -30,9 +30,6 @@ export function RootComponent() {
 				<main>
 					<Outlet />
 				</main>
-				<footer>
-					<p>Footer</p>
-				</footer>
 			</div>
 			<Suspense>
 				<TanStackRouterDevtools position="bottom-right" />
