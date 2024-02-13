@@ -2,10 +2,10 @@
 	--default_padding: 1rem;
 
 	/* Screen Sizes */
-	--screen-sm: 400px;
-	--screen-md: 700px;
-	--screen-lg: 900px;
-	--screen-xl: 1200px;
+	--screen-sm: 550px;
+	--screen-md: 1100px;
+	--screen-lg: 1500px;
+	--screen-xl: 1500px;
 
 	/* Typography */
 	--font-size-xs: clamp(0.6rem, 0.17vw + 0.76rem, 0.7rem);

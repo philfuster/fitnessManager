@@ -15,10 +15,10 @@ export function RootComponent() {
 				<header>
 					<Link to="/" className="[&.active]:font-bold">
 						Home
-					</Link>{' '}
+					</Link>
 					<Link to="/about" className="[&.active]:font-bold">
 						About
-					</Link>{' '}
+					</Link>
 					<Link to="/exercise" className="[&.active]:font-bold">
 						Exercise
 					</Link>

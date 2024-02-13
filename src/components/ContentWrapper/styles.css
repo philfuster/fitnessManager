@@ -1,0 +1,6 @@
+@layer {
+	.content-wrapper {
+		padding: var(--default_padding);
+		border: 1px red solid;
+	}
+}
