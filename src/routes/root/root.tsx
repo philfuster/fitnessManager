@@ -13,18 +13,10 @@ export function RootComponent() {
 		<>
 			<div className="layout-grid">
 				<header>
-					<Link to="/" className="[&.active]:font-bold">
-						Home
-					</Link>
-					<Link to="/about" className="[&.active]:font-bold">
-						About
-					</Link>
-					<Link to="/exercise" className="[&.active]:font-bold">
-						Exercise
-					</Link>
-					<Link to="/roadmap" className="[&.active]:font-bold">
-						Roadmap
-					</Link>
+					<Link to="/">Home</Link>
+					<Link to="/exercise">Exercise</Link>
+					<Link to="/about">About</Link>
+					<Link to="/roadmap">Roadmap</Link>
 				</header>
 				<hr />
 				<main>
