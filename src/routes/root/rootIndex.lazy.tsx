@@ -1,4 +1,5 @@
 import { createLazyRoute } from '@tanstack/react-router';
+import { ContentWrapper } from '../../components';
 
 export const Route = createLazyRoute('/')({
 	component: Index,
