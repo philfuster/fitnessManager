@@ -20,7 +20,7 @@ function Index() {
 				<li>Lunges</li>
 				<li>Squats</li>
 			</ul>
-			<Link>Create an Exercise</Link>
+			<Link to="/exercise/create">Create an Exercise</Link>
 		</div>
 	);
 }
