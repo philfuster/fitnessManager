@@ -10,17 +10,41 @@ function Index() {
 		<>
 			<h1>Welcome to Fitness Manager</h1>
 			<ContentWrapper>
-				<p>This application is meant for tracking your fitness journey.</p>
+				<p>Document your fitness journey here.</p>
 				<p>You can:</p>
 				<ul>
 					<li>
-						Create <em>Workout Templates</em>
+						Create{' '}
+						<strong>
+							<em>Workout Templates</em>
+						</strong>
 					</li>
 					<li>
-						Create <em>Exercises</em>
+						Create{' '}
+						<strong>
+							<em>Exercises</em>
+						</strong>
 					</li>
-					<li>Add Exercises to Workout Templates</li>
-					<li>Create Workout Instances from Workout Templates</li>
+					<li>
+						Add{' '}
+						<strong>
+							<em>Exercises</em>
+						</strong>{' '}
+						to{' '}
+						<strong>
+							<em>Workout Templates</em>
+						</strong>
+					</li>
+					<li>
+						Create{' '}
+						<strong>
+							<em>Workout Instances</em>
+						</strong>{' '}
+						from{' '}
+						<strong>
+							<em>Workout Templates</em>
+						</strong>
+					</li>
 					<li>Fill out the template during/after the work out</li>
 					<li>Add/remove exercises in a workout</li>
 					<li>Adjust sets/weight/reps</li>
