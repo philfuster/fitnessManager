@@ -1,0 +1,16 @@
+@layer {
+	.formGroup {
+		display: flex;
+		flex-direction: column;
+		align-items: start;
+	}
+
+	label {
+		font-weight: bold;
+	}
+
+	input {
+		border: 1px solid;
+		border-radius: 4px;
+	}
+}
