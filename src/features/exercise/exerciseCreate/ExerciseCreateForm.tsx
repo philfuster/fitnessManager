@@ -1,3 +1,5 @@
+import { Input } from '../../../components/Input';
+
 export function ExerciseCreateForm() {
 	function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
 		// TODO: Implement form submission. I'm thinking of creating a hook to use the local cache. Or maybe IndexDB.
@@ -15,25 +17,25 @@ export function ExerciseCreateForm() {
 
 	return (
 		<form id="exerciseCreateForm" onSubmit={handleSubmit}>
-			<div>
-				<label htmlFor="exerciseName">Name</label>
-				<input id="exerciseName" name="exerciseName" type="text" required />
-			</div>
-			<div>
-				<label htmlFor="exerciseDescription">Description</label>
-				<input id="exerciseDescription" name="exerciseDescription" type="text" required />
-			</div>
-			<fieldset>
-				<legend>Defaults</legend>
-				<div>
-					<label htmlFor="defaultRepetitions">Repetitions</label>
-					<input id="defaultRepetitions" name="defaultRepetitions" type="number" min={1} />
-				</div>
-				<div>
-					<label htmlFor="defaultSets">Sets</label>
-					<input id="defaultSets" name="defaultSets" type="number" min={1} />
-				</div>
-			</fieldset>
+			<Input name="exerciseName" id="exerciseName" label="Exercise Name" type="text" required />
+			<Input
+				name="exerciseDescription"
+				id="exerciseDescription"
+				label="Exercise Description"
+				type="text"
+				required
+			/>
+			<section>
+				<h6>Defaults</h6>
+				<Input
+					name="defaultRepetitions"
+					label="Default Repetitions"
+					id="defaultRepetitions"
+					type="number"
+					min={1}
+				/>
+				<Input name="defaultSets" label="Default Sets" id="defaultSets" type="number" min={1} />
+			</section>
 			<button type="submit">Create</button>
 		</form>
 	);
