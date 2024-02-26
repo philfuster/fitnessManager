@@ -5,9 +5,6 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
-  '@stylexjs/stylex':
-    specifier: ^0.5.1
-    version: 0.5.1
   '@tanstack/react-router':
     specifier: ^1.57.15
     version: 1.57.15(@tanstack/router-generator@1.57.15)(react-dom@18.3.1)(react@18.3.1)
@@ -1129,10 +1126,6 @@ packages:
 
   /color-name@1.1.4:
     resolution: {integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==}
-    dev: true
-
-  /compare-versions@6.1.0:
-    resolution: {integrity: sha512-LNZQXhqUvqUTotpZ00qLSaify3b4VFD588aRr8MKFw4CMUr98ytzCW5wDH5qx/DEY5kCDXcbcRuCqL0szEf2tg==}
     dev: true
 
   /concat-map@0.0.1:
