@@ -1,12 +1,24 @@
 /* The main css entry. Primarily used to import stuff */
-@layer reset, base;
+
+@layer reset, base, variables, layout;
 
 /* Import all css themes */
 @import "./reset.css";
 @import "./base.css";
 @import "./layout.css";
 @import "./variables.css";
+@import "./buttons.css";
+@import "./forms.css";
 
 .center {
-  text-align: center;
+	text-align: center;
+}
+
+.navLink {
+	color: var(--clr-brand-accent);
+	&:hover {
+		color: var(--clr-brand-500);
+		/* text-decoration: underline; */
+		background-color: var(--clr-brand-accent);
+	}
 }

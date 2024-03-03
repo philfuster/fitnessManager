@@ -1,0 +1,39 @@
+@layer base {
+	form {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+		max-width: 400px;
+		gap: 10px;
+		background: var(--clr-brand-background);
+		border-radius: var(--brad);
+		padding: 2rem;
+	}
+
+	.formGroup {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+	}
+
+	.formButton {
+		background-color: var(--clr-brand-accent);
+		color: var(--clr-text-invert);
+	}
+
+	input {
+		padding: 10px 16px;
+		border-radius: var(--brad);
+		border: 1.5px solid var(--clr-brand-accent);
+		&:focus {
+			outline: none;
+			border-color: var(--clr-brand-500);
+		}
+	}
+
+	label {
+		margin-bottom: 0.2rem;
+		font-weight: 600;
+	}
+}
