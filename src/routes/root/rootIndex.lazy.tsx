@@ -1,5 +1,4 @@
 import { createLazyRoute } from '@tanstack/react-router';
-import { ContentWrapper } from '../../components';
 
 export const Route = createLazyRoute('/')({
 	component: Index,
@@ -9,7 +8,7 @@ function Index() {
 	return (
 		<>
 			<h1>Welcome to Fitness Manager</h1>
-			<ContentWrapper>
+			<section>
 				<p>Document your fitness journey here.</p>
 				<p>You can:</p>
 				<ul>
@@ -50,7 +49,7 @@ function Index() {
 					<li>Adjust sets/weight/reps</li>
 					<li>View workout metrics</li>
 				</ul>
-			</ContentWrapper>
+			</section>
 		</>
 	);
 }

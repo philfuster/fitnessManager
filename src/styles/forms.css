@@ -2,9 +2,8 @@
 	form {
 		display: flex;
 		flex-direction: column;
-		align-items: center;
 		width: 100%;
-		max-width: 400px;
+		max-width: 600px;
 		gap: 10px;
 		background: var(--clr-brand-background);
 		border-radius: var(--brad);
@@ -14,6 +13,7 @@
 	.formGroup {
 		display: flex;
 		flex-direction: column;
+		text-align: left;
 		width: 100%;
 	}
 

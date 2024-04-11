@@ -1,5 +1,5 @@
 import { ContentWrapper } from '../../../components';
-import { ExerciseCreateForm } from './ExerciseCreateForm';
+import { ExerciseCreateForm } from './exerciseCreateForm';
 
 export function ExerciseCreatePage() {
 	return (
