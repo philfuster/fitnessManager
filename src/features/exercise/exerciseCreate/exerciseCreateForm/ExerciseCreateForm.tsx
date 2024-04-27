@@ -16,7 +16,7 @@ function ExerciseCreateForm() {
 	}
 
 	return (
-		<form className="center" onSubmit={handleSubmit}>
+		<form className="center" id="exerciseCreateForm" onSubmit={handleSubmit}>
 			<div className="formGroup">
 				<label htmlFor="exerciseName">Exercise Name</label>
 				<input type="text" name="exerciseName" id="exerciseName" required />
