@@ -1,50 +1,93 @@
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '#components/Form';
+import { z } from 'zod';
 import './styles.css';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm } from 'react-hook-form';
+import { Input } from '#components/Input';
+
+const exerciseCreateFormSchema = z.object({
+	exerciseName: z.string().min(1).max(250),
+	exerciseDescription: z.string().min(1, 'please provide an exercise description').max(500),
+	defaultRepetitions: z.coerce.number().min(1),
+	defaultSets: z.coerce.number().min(1),
+});
 
 function ExerciseCreateForm() {
-	function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-		// TODO: Implement form submission. I'm thinking of creating a hook to use the local cache. Or maybe IndexDB.
-		event.preventDefault();
-		// biome-ignore lint/style/noNonNullAssertion: exerciseCreateForm defined in this file.
-		const formElement = document.getElementById('exerciseCreateForm')!;
-		if (!isHtmlFormElement(formElement)) {
-			throw new Error('Form element is not an HTMLFormElement');
-		}
-		const form = new FormData(formElement);
-		console.dir(form.entries());
-		const exerciseCreateInput = Object.fromEntries(form.entries());
-		console.dir(exerciseCreateInput);
+	const form = useForm<z.infer<typeof exerciseCreateFormSchema>>({
+		resolver: zodResolver(exerciseCreateFormSchema),
+		defaultValues: {
+			exerciseName: '',
+			exerciseDescription: '',
+			defaultRepetitions: 1,
+			defaultSets: 1,
+		},
+	});
+
+	function onSubmit(values: z.infer<typeof exerciseCreateFormSchema>) {
+		console.log(values);
 	}
 
 	return (
-		<form className="center" id="exerciseCreateForm" onSubmit={handleSubmit}>
-			<div className="formGroup">
-				<label htmlFor="exerciseName">Exercise Name</label>
-				<input type="text" name="exerciseName" id="exerciseName" required />
-			</div>
-			<div className="formGroup">
-				<label htmlFor="exerciseDescription">Exercise Description</label>
-				<input type="textarea" name="exerciseDescription" id="exerciseDescription" required />
-			</div>
-			<section>
-				<h6>Defaults</h6>
-				<div className="formGroup">
-					<label htmlFor="defaultRepetitions">Default Repetitions</label>
-					<input type="number" min={1} name="defaultRepetitions" id="defaultRepetitions" required />
-				</div>
-				<div className="formGroup">
-					<label htmlFor="defaultSets">Default Sets</label>
-					<input type="number" min={1} name="defaultSets" id="defaultSets" required />
-				</div>
-			</section>
-			<button className="formButton" type="submit">
-				Create
-			</button>
-		</form>
+		<Form {...form}>
+			<form onSubmit={form.handleSubmit(onSubmit)}>
+				<FormField
+					control={form.control}
+					name="exerciseName"
+					render={({ field }) => (
+						<FormItem>
+							<FormLabel>Exercise Name</FormLabel>
+							<FormControl>
+								<Input {...field} />
+							</FormControl>
+							<FormMessage />
+						</FormItem>
+					)}
+				/>
+				<FormField
+					control={form.control}
+					name="exerciseDescription"
+					render={({ field }) => (
+						<FormItem>
+							<FormLabel>Exercise Description</FormLabel>
+							<FormControl>
+								<Input {...field} />
+							</FormControl>
+							<FormMessage />
+						</FormItem>
+					)}
+				/>
+				<FormField
+					control={form.control}
+					name="defaultRepetitions"
+					render={({ field }) => (
+						<FormItem>
+							<FormLabel>Default Repetitions</FormLabel>
+							<FormControl>
+								<Input type="number" {...field} />
+							</FormControl>
+							<FormMessage />
+						</FormItem>
+					)}
+				/>
+				<FormField
+					control={form.control}
+					name="defaultSets"
+					render={({ field }) => (
+						<FormItem>
+							<FormLabel>Default Sets</FormLabel>
+							<FormControl>
+								<Input {...field} type="number" />
+							</FormControl>
+							<FormMessage />
+						</FormItem>
+					)}
+				/>
+				<button type="submit" className="formButton">
+					Submit
+				</button>
+			</form>
+		</Form>
 	);
-
-	function isHtmlFormElement(element: HTMLElement): element is HTMLFormElement {
-		return element instanceof HTMLFormElement;
-	}
 }
 
 export default ExerciseCreateForm;
