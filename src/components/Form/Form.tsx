@@ -88,7 +88,7 @@ const FormLabel = React.forwardRef<
 	return (
 		<Label
 			ref={ref}
-			className={clsx(error && 'text-destructive', className)}
+			className={clsx(error && 'textDestructive', className)}
 			htmlFor={formItemId}
 			{...props}
 		/>
@@ -120,14 +120,7 @@ const FormDescription = React.forwardRef<
 >(({ className, ...props }, ref) => {
 	const { formDescriptionId } = useFormField();
 
-	return (
-		<p
-			ref={ref}
-			id={formDescriptionId}
-			className={clsx('text-sm text-muted-foreground', className)}
-			{...props}
-		/>
-	);
+	return <p ref={ref} id={formDescriptionId} className={clsx('textSmall', className)} {...props} />;
 });
 FormDescription.displayName = 'FormDescription';
 
@@ -143,9 +136,9 @@ const FormMessage = React.forwardRef<
 	}
 
 	return (
-		<p ref={ref} id={formMessageId} className={className} {...props}>
+		<span ref={ref} id={formMessageId} className={className} {...props}>
 			{body}
-		</p>
+		</span>
 	);
 });
 FormMessage.displayName = 'FormMessage';

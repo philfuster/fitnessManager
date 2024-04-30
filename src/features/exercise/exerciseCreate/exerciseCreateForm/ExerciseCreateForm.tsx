@@ -8,8 +8,8 @@ import { Input } from '#components/Input';
 const exerciseCreateFormSchema = z.object({
 	exerciseName: z.string().min(1).max(250),
 	exerciseDescription: z.string().min(1, 'please provide an exercise description').max(500),
-	defaultRepetitions: z.coerce.number().min(1),
-	defaultSets: z.coerce.number().min(1),
+	defaultRepetitions: z.coerce.number().positive().min(1),
+	defaultSets: z.coerce.number().positive().min(1),
 });
 
 function ExerciseCreateForm() {
@@ -29,17 +29,19 @@ function ExerciseCreateForm() {
 
 	return (
 		<Form {...form}>
-			<form onSubmit={form.handleSubmit(onSubmit)}>
+			<form onSubmit={form.handleSubmit(onSubmit)} style={{ padding: '20px' }}>
 				<FormField
 					control={form.control}
 					name="exerciseName"
 					render={({ field }) => (
-						<FormItem>
-							<FormLabel>Exercise Name</FormLabel>
+						<FormItem className="formItemLayout">
+							<div className="formItemDetails">
+								<FormLabel>Exercise Name</FormLabel>
+								<FormMessage />
+							</div>
 							<FormControl>
 								<Input {...field} />
 							</FormControl>
-							<FormMessage />
 						</FormItem>
 					)}
 				/>
@@ -47,12 +49,14 @@ function ExerciseCreateForm() {
 					control={form.control}
 					name="exerciseDescription"
 					render={({ field }) => (
-						<FormItem>
-							<FormLabel>Exercise Description</FormLabel>
+						<FormItem className="formItemLayout">
+							<div className="formItemDetails">
+								<FormLabel>Exercise Description</FormLabel>
+								<FormMessage />
+							</div>
 							<FormControl>
 								<Input {...field} />
 							</FormControl>
-							<FormMessage />
 						</FormItem>
 					)}
 				/>
@@ -60,12 +64,14 @@ function ExerciseCreateForm() {
 					control={form.control}
 					name="defaultRepetitions"
 					render={({ field }) => (
-						<FormItem>
-							<FormLabel>Default Repetitions</FormLabel>
+						<FormItem className="formItemLayout">
+							<div className="formItemDetails">
+								<FormLabel>Default Repetitions</FormLabel>
+								<FormMessage />
+							</div>
 							<FormControl>
 								<Input type="number" {...field} />
 							</FormControl>
-							<FormMessage />
 						</FormItem>
 					)}
 				/>
@@ -73,12 +79,14 @@ function ExerciseCreateForm() {
 					control={form.control}
 					name="defaultSets"
 					render={({ field }) => (
-						<FormItem>
-							<FormLabel>Default Sets</FormLabel>
+						<FormItem className="formItemLayout">
+							<div className="formItemDetails">
+								<FormLabel>Default Sets</FormLabel>
+								<FormMessage />
+							</div>
 							<FormControl>
 								<Input {...field} type="number" />
 							</FormControl>
-							<FormMessage />
 						</FormItem>
 					)}
 				/>

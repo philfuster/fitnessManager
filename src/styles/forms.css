@@ -36,4 +36,26 @@
 		margin-bottom: 0.2rem;
 		font-weight: 600;
 	}
+
+	.textDestructive {
+		color: var(--clr-error-500);
+	}
+
+	.textSmall {
+		font-size: var(--font-size-sm);
+	}
+
+	.formItemDetails {
+		display: flex;
+		justify-content: space-between;
+		align-items: bottom;
+		& {
+			margin-bottom: 0.2rem;
+		}
+	}
+
+	.formItemLayout {
+		display: flex;
+		flex-direction: column;
+	}
 }
