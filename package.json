@@ -7,9 +7,9 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "biome lint --diagnostic-level=warn .",
-    "lint:fix": "biome lint --apply --diagnostic-level=warn .",
+    "lint:fix": "biome lint --write --diagnostic-level=warn .",
     "format": "biome ci --diagnostic-level=warn .",
-    "format:fix": "biome check . --apply --diagnostic-level=warn .",
+    "format:fix": "biome check . --write --diagnostic-level=warn .",
     "preview": "vite preview"
   },
   "dependencies": {

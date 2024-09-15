@@ -40,5 +40,5 @@ function getTanStackRouterDevTools() {
 				import('@tanstack/router-devtools').then((res) => ({
 					default: res.TanStackRouterDevtools,
 				})),
-		  );
+			);
 }
