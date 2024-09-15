@@ -1,133 +1,134 @@
 @layer base {
-	* {
-		box-sizing: border-box;
-	}
-	html, body {
-		height: 100%
-	}
-	html {
-		box-sizing: border-box;
-		-webkit-text-size-adjust: none;
-		background-color: rgb(236, 239, 255);
-	}
+  * {
+    box-sizing: border-box;
+  }
+  html,
+  body {
+    height: 100%;
+  }
+  html {
+    box-sizing: border-box;
+    -webkit-text-size-adjust: none;
+    background-color: rgb(236, 239, 255);
+  }
 
-	*,
-	*::before,
-	*::after {
-		box-sizing: inherit;
-	}
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
 
-	@font-face {
-		font-family: 'ClearSans';
-		src: url('/fonts/ClearSans-Regular.woff') format('woff');
-		font-weight: normal;
-		font-style: normal;
-	}
+  @font-face {
+    font-family: "ClearSans";
+    src: url("/fonts/ClearSans-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
 
-	@font-face {
-		font-family: 'ClearSans';
-		src: url('/fonts/ClearSans-Bold.woff') format('woff');
-		font-weight: bold;
-		font-style: normal;
-	}
+  @font-face {
+    font-family: "ClearSans";
+    src: url("/fonts/ClearSans-Bold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+  }
 
-	@font-face {
-		font-family: 'ClearSans';
-		src: url('/fonts/ClearSans-BoldItalic.woff') format('woff');
-		font-weight: bold;
-		font-style: italic;
-	}
+  @font-face {
+    font-family: "ClearSans";
+    src: url("/fonts/ClearSans-BoldItalic.woff") format("woff");
+    font-weight: bold;
+    font-style: italic;
+  }
 
-	@font-face {
-		font-family: 'ClearSans';
-		src: url('/fonts/ClearSans-Italic.woff') format('woff');
-		font-weight: normal;
-		font-style: italic;
-	}
+  @font-face {
+    font-family: "ClearSans";
+    src: url("/fonts/ClearSans-Italic.woff") format("woff");
+    font-weight: normal;
+    font-style: italic;
+  }
 
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		font-family: 'ClearSans', sans-serif;
-		font-weight: 700;
-		letter-spacing: -0.04em;
-		line-height: 1.4;
-		text-wrap: balance;
-		font-style: italic;
-	}
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "ClearSans", sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1.4;
+    text-wrap: balance;
+    font-style: italic;
+  }
 
-	h1 {
-		font-size: var(--font-size-xxxl);
-	}
+  h1 {
+    font-size: var(--font-size-xxxl);
+  }
 
-	h2 {
-		font-size: var(--font-size-xxl);
-	}
+  h2 {
+    font-size: var(--font-size-xxl);
+  }
 
-	h3 {
-		font-size: var(--font-size-xl);
-	}
+  h3 {
+    font-size: var(--font-size-xl);
+  }
 
-	h4 {
-		font-size: var(--font-size-lg);
-	}
+  h4 {
+    font-size: var(--font-size-lg);
+  }
 
-	h5 {
-		font-size: var(--font-size-md);
-	}
+  h5 {
+    font-size: var(--font-size-md);
+  }
 
-	h6,
-	p,
-	li {
-		font-size: var(--font-size-base);
-	}
+  h6,
+  p,
+  li {
+    font-size: var(--font-size-base);
+  }
 
-	html {
-		font-size: 'ClearSans', sans-serif;
-	}
+  html {
+    font-size: "ClearSans", sans-serif;
+  }
 
-	body {
-		padding: 0;
-		margin: 0;
-	}
+  body {
+    padding: 0;
+    margin: 0;
+  }
 
-	a {
-		text-decoration: none;
-	}
+  a {
+    text-decoration: none;
+  }
 
-	a:hover {
-		cursor: pointer;
-	}
+  a:hover {
+    cursor: pointer;
+  }
 
-	:is(p, li) a {
-		color: #000;
-		text-decoration: underline;
-		text-decoration-color: var(--primary) #1f3de6;
-		text-decoration-thickness: 1.5px;
-	}
+  :is(p, li) a {
+    color: #000;
+    text-decoration: underline;
+    text-decoration-color: var(--primary) #1f3de6;
+    text-decoration-thickness: 1.5px;
+  }
 
-	p {
-		line-height: 1.7;
-		font-weight: 500;
-	}
+  p {
+    line-height: 1.7;
+    font-weight: 500;
+  }
 
-	li {
-		line-height: 2.2;
-		list-style-type: circle;
-	}
+  li {
+    line-height: 2.2;
+    list-style-type: circle;
+  }
 
-	ol li {
-		list-style-type: decimal;
-	}
+  ol li {
+    list-style-type: decimal;
+  }
 
-	body {
-		margin: 0 auto;
-		width: 100%;
-		max-width: 800px;
-		padding: 1rem;
-		line-height: 1.5;
-	}
+  body {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 800px;
+    padding: 1rem;
+    line-height: 1.5;
+  }
 }

@@ -3,13 +3,11 @@
 @layer reset, base;
 
 /* Import all css themes */
-@import './reset.css';
-@import './base.css';
-@import './layout.css';
-@import './variables.css';
+@import "./reset.css";
+@import "./base.css";
+@import "./layout.css";
+@import "./variables.css";
 
 .center {
-	text-align: center;
+  text-align: center;
 }
-
-
