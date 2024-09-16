@@ -1,39 +1,39 @@
 {
-  "name": "test-vite",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "build": "tsc && vite build",
-    "dev": "vite",
-    "format": "biome ci --diagnostic-level=warn .",
-    "format:fix": "biome check . --write --diagnostic-level=warn .",
-    "lint": "biome lint --diagnostic-level=warn .",
-    "lint:fix": "biome lint --write --diagnostic-level=warn .",
-    "preview": "vite preview",
-    "typecheck": "tsc --noEmit && echo 'No type errors.'"
-  },
-  "dependencies": {
-    "@hookform/resolvers": "^3.3.4",
-    "@radix-ui/react-label": "^2.0.2",
-    "@radix-ui/react-slot": "^1.0.2",
-    "@tanstack/react-router": "^1.57.15",
-    "@tanstack/router-vite-plugin": "^1.57.15",
-    "clsx": "^2.1.1",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-hook-form": "^7.51.3",
-    "zod": "^3.23.4"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "^1.9.1",
-    "@tanstack/router-devtools": "^1.57.15",
-    "@types/react": "^18.3.5",
-    "@types/react-dom": "^18.3.0",
-    "@vitejs/plugin-react": "^4.3.1",
-    "lightningcss": "^1.27.0",
-    "typescript": "^5.6.2",
-    "vite": "^5.4.5",
-    "vite-tsconfig-paths": "^5.0.1"
-  }
+	"name": "test-vite",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"build": "tsc && vite build",
+		"dev": "vite",
+		"format": "biome ci --diagnostic-level=warn .",
+		"format:fix": "biome check . --write --diagnostic-level=warn .",
+		"lint": "biome lint --diagnostic-level=warn .",
+		"lint:fix": "biome lint --write --diagnostic-level=warn .",
+		"preview": "vite preview",
+		"typecheck": "tsc --noEmit && echo 'No type errors.'"
+	},
+	"dependencies": {
+		"@hookform/resolvers": "^3.3.4",
+		"@radix-ui/react-label": "^2.0.2",
+		"@radix-ui/react-slot": "^1.0.2",
+		"@tanstack/react-router": "^1.57.15",
+		"@tanstack/router-vite-plugin": "^1.57.15",
+		"clsx": "^2.1.1",
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1",
+		"react-hook-form": "^7.51.3",
+		"zod": "^3.23.4"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.9.1",
+		"@tanstack/router-devtools": "^1.57.15",
+		"@types/react": "^18.3.5",
+		"@types/react-dom": "^18.3.0",
+		"@vitejs/plugin-react": "^4.3.1",
+		"lightningcss": "^1.27.0",
+		"typescript": "^5.6.2",
+		"vite": "^5.4.5",
+		"vite-tsconfig-paths": "^5.0.1"
+	}
 }
