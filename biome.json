@@ -1,8 +1,5 @@
 {
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
-  "organizeImports": {
-    "enabled": true
-  },
   "files": {
     "ignore": ["./**/dist/**", "./**/pnpm-lock.yaml", "./src/routeTree.gen.ts"]
   },
@@ -11,12 +8,21 @@
     "indentStyle": "space",
     "lineWidth": 100
   },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true
+    }
+  },
   "javascript": {
     "formatter": {
       "quoteStyle": "single",
       "trailingCommas": "all",
       "indentStyle": "tab"
     }
+  },
+  "organizeImports": {
+    "enabled": true
   },
   "overrides": [
     {
@@ -25,11 +31,5 @@
         "indentStyle": "tab"
       }
     }
-  ],
-  "linter": {
-    "enabled": true,
-    "rules": {
-      "recommended": true
-    }
-  }
+  ]
 }
