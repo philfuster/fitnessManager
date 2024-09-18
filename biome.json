@@ -1,5 +1,5 @@
 {
-	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+	"$schema": "https://biomejs.dev/schemas/1.9.1/schema.json",
 	"files": {
 		"ignore": ["./**/dist/**", "./**/pnpm-lock.yaml", "./src/routeTree.gen.ts"]
 	},
@@ -11,7 +11,10 @@
 	"linter": {
 		"enabled": true,
 		"rules": {
-			"recommended": true
+			"recommended": true,
+			"correctness": {
+				"noUnusedImports": "error"
+			}
 		}
 	},
 	"javascript": {
