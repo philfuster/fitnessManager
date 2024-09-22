@@ -8,8 +8,8 @@
 	--screen-xl: 1500px;
 
 	/* Typography */
-	--body-font-family: 'ClearSans', sans-serif;
-	--heading-font-family: 'ClearSans', sans-serif;
+	--body-font-family: "ClearSans", sans-serif;
+	--heading-font-family: "ClearSans", sans-serif;
 	--font-size-xs: clamp(0.675rem, 0.19vw + 0.855rem, 0.7875rem);
 	--font-size-sm: clamp(0.9rem, 0.19vw + 0.855rem, 1.00125rem);
 	--font-size-base: clamp(1.125rem, 0.3825vw + 1.02375rem, 1.3425rem);

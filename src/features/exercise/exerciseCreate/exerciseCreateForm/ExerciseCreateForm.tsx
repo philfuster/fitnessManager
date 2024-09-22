@@ -4,16 +4,19 @@ import './styles.css';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { Input } from '#components/Input';
+import { TextArea } from '#components/TextArea';
 
 const exerciseCreateFormSchema = z.object({
-	exerciseName: z.string().min(1).max(250),
-	exerciseDescription: z.string().min(1, 'please provide an exercise description').max(500),
+	exerciseName: z.string().min(1, 'Required').max(250),
+	exerciseDescription: z.string().min(1, 'Required').max(500),
 	defaultRepetitions: z.coerce.number().positive().min(1),
 	defaultSets: z.coerce.number().positive().min(1),
 });
 
+type ExerciseCreateFormSchema = z.input<typeof exerciseCreateFormSchema>;
+
 function ExerciseCreateForm() {
-	const form = useForm<z.infer<typeof exerciseCreateFormSchema>>({
+	const form = useForm<ExerciseCreateFormSchema>({
 		resolver: zodResolver(exerciseCreateFormSchema),
 		defaultValues: {
 			exerciseName: '',
@@ -23,20 +26,20 @@ function ExerciseCreateForm() {
 		},
 	});
 
-	function onSubmit(values: z.infer<typeof exerciseCreateFormSchema>) {
+	function onSubmit(values: ExerciseCreateFormSchema) {
 		console.log(values);
 	}
 
 	return (
 		<Form {...form}>
-			<form onSubmit={form.handleSubmit(onSubmit)} style={{ padding: '20px' }}>
+			<form onSubmit={form.handleSubmit(onSubmit)}>
 				<FormField
 					control={form.control}
 					name="exerciseName"
 					render={({ field }) => (
 						<FormItem className="formItemLayout">
 							<div className="formItemDetails">
-								<FormLabel>Exercise Name</FormLabel>
+								<FormLabel>Name</FormLabel>
 								<FormMessage />
 							</div>
 							<FormControl>
@@ -51,26 +54,27 @@ function ExerciseCreateForm() {
 					render={({ field }) => (
 						<FormItem className="formItemLayout">
 							<div className="formItemDetails">
-								<FormLabel>Exercise Description</FormLabel>
+								<FormLabel>Description</FormLabel>
 								<FormMessage />
 							</div>
 							<FormControl>
-								<Input {...field} />
+								<TextArea {...field} />
 							</FormControl>
 						</FormItem>
 					)}
 				/>
+				<h2 className="h4">Defaults</h2>
 				<FormField
 					control={form.control}
 					name="defaultRepetitions"
 					render={({ field }) => (
 						<FormItem className="formItemLayout">
 							<div className="formItemDetails">
-								<FormLabel>Default Repetitions</FormLabel>
+								<FormLabel>Repetitions</FormLabel>
 								<FormMessage />
 							</div>
 							<FormControl>
-								<Input type="number" {...field} />
+								<Input type="number" min={1} {...field} />
 							</FormControl>
 						</FormItem>
 					)}
@@ -81,11 +85,11 @@ function ExerciseCreateForm() {
 					render={({ field }) => (
 						<FormItem className="formItemLayout">
 							<div className="formItemDetails">
-								<FormLabel>Default Sets</FormLabel>
+								<FormLabel>Sets</FormLabel>
 								<FormMessage />
 							</div>
 							<FormControl>
-								<Input {...field} type="number" />
+								<Input {...field} min={1} type="number" />
 							</FormControl>
 						</FormItem>
 					)}

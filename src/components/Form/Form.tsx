@@ -10,11 +10,11 @@ import {
 	FormProvider,
 	useFormContext,
 } from 'react-hook-form';
-
 import { Label } from '../Label';
 
 const Form = FormProvider;
 
+// #region FormField
 type FormFieldContextValue<
 	TFieldValues extends FieldValues = FieldValues,
 	TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
@@ -59,7 +59,9 @@ const useFormField = () => {
 		...fieldState,
 	};
 };
+// #endregion FormField
 
+// #region FormItem
 type FormItemContextValue = {
 	id: string;
 };
@@ -78,7 +80,9 @@ const FormItem = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivEl
 	},
 );
 FormItem.displayName = 'FormItem';
+// #endregion FormItem
 
+// #region FormLabel
 const FormLabel = React.forwardRef<
 	React.ElementRef<typeof LabelPrimitive.Root>,
 	React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root>
@@ -95,7 +99,9 @@ const FormLabel = React.forwardRef<
 	);
 });
 FormLabel.displayName = 'FormLabel';
+// #endregion FormLabel
 
+// #region FormControl
 const FormControl = React.forwardRef<
 	React.ElementRef<typeof Slot>,
 	React.ComponentPropsWithoutRef<typeof Slot>
@@ -113,7 +119,9 @@ const FormControl = React.forwardRef<
 	);
 });
 FormControl.displayName = 'FormControl';
+// #endregion FormControl
 
+// #region FormDescription
 const FormDescription = React.forwardRef<
 	HTMLParagraphElement,
 	React.HTMLAttributes<HTMLParagraphElement>
@@ -123,7 +131,9 @@ const FormDescription = React.forwardRef<
 	return <p ref={ref} id={formDescriptionId} className={clsx('textSmall', className)} {...props} />;
 });
 FormDescription.displayName = 'FormDescription';
+// #endregion FormDescription
 
+// #region FormMessage
 const FormMessage = React.forwardRef<
 	HTMLParagraphElement,
 	React.HTMLAttributes<HTMLParagraphElement>
@@ -142,6 +152,7 @@ const FormMessage = React.forwardRef<
 	);
 });
 FormMessage.displayName = 'FormMessage';
+// #endregion FormMessage
 
 export {
 	useFormField,
