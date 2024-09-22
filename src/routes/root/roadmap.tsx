@@ -1,5 +1,5 @@
 import { createRoute } from '@tanstack/react-router';
-import { rootRoute } from './root';
+import { rootRoute } from './__root';
 
 export const roadmapRoute = createRoute({
 	getParentRoute: () => rootRoute,

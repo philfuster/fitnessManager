@@ -1,0 +1,67 @@
+@layer base {
+	form {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		max-width: 600px;
+		gap: 10px;
+		background: var(--clr-brand-background);
+		border-radius: var(--brad);
+		padding: 1.25rem;
+	}
+
+	.formGroup {
+		display: flex;
+		flex-direction: column;
+		text-align: left;
+		width: 100%;
+	}
+
+	.formButton {
+		background-color: var(--clr-brand-accent);
+		color: var(--clr-text-invert);
+	}
+
+	input,
+	textarea {
+		padding: 10px 16px;
+		border-radius: var(--brad);
+		border: 1.5px solid var(--clr-brand-accent);
+		line-height: 1.5;
+		&:focus {
+			outline: none;
+			border-color: var(--clr-brand-500);
+		}
+	}
+
+	textarea {
+		resize: none;
+	}
+
+	label {
+		margin-bottom: 0.2rem;
+		font-weight: 600;
+	}
+
+	.textDestructive {
+		color: var(--clr-error-500);
+	}
+
+	.textSmall {
+		font-size: var(--font-size-sm);
+	}
+
+	.formItemDetails {
+		display: flex;
+		justify-content: space-between;
+		align-items: bottom;
+		& {
+			margin-bottom: 0.2rem;
+		}
+	}
+
+	.formItemLayout {
+		display: flex;
+		flex-direction: column;
+	}
+}

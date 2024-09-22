@@ -1,5 +1,5 @@
 @layer {
-  .content-wrapper {
-    padding: var(--default_padding);
-  }
+	.content-wrapper {
+		padding: var(--default_padding);
+	}
 }

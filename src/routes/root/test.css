@@ -1,0 +1,24 @@
+@layer {
+	.card {
+		border: solid 0.5px var(--clr-brand-accent);
+		background-color: var(--clr-brand-background);
+		> p,
+		h3 {
+			color: var(--clr-text);
+		}
+	}
+
+	.buttonContainer {
+		display: flex;
+		gap: 10px;
+		justify-content: center;
+		> button {
+			background-color: var(--clr-brand-accent);
+			color: var(--clr-text-invert);
+			&:hover {
+				background-color: var(--clr-neutral-900);
+				color: var(--clr-neutral-100);
+			}
+		}
+	}
+}

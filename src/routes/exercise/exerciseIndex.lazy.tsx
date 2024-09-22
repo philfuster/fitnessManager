@@ -6,7 +6,7 @@ export const Route = createLazyRoute('/exercise')({
 
 function Index() {
 	return (
-		<div>
+		<>
 			<h1>Exercises</h1>
 			<p>
 				An <em>exercise</em>, is the training of the body to improve its function and enhance its
@@ -20,7 +20,7 @@ function Index() {
 				<li>Lunges</li>
 				<li>Squats</li>
 			</ul>
-			<Link>Create an Exercise</Link>
-		</div>
+			<Link to="/exercise/create">Create an Exercise</Link>
+		</>
 	);
 }

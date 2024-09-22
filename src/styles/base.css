@@ -1,134 +1,159 @@
 @layer base {
-  * {
-    box-sizing: border-box;
-  }
-  html,
-  body {
-    height: 100%;
-  }
-  html {
-    box-sizing: border-box;
-    -webkit-text-size-adjust: none;
-    background-color: rgb(236, 239, 255);
-  }
+	* {
+		box-sizing: border-box;
+	}
 
-  *,
-  *::before,
-  *::after {
-    box-sizing: inherit;
-  }
+	html,
+	body {
+		height: 100%;
+	}
 
-  @font-face {
-    font-family: "ClearSans";
-    src: url("/fonts/ClearSans-Regular.woff") format("woff");
-    font-weight: normal;
-    font-style: normal;
-  }
+	html {
+		box-sizing: border-box;
+		-webkit-text-size-adjust: none;
+		background-color: var(--clr-background);
+		color: var(--clr-text);
+	}
 
-  @font-face {
-    font-family: "ClearSans";
-    src: url("/fonts/ClearSans-Bold.woff") format("woff");
-    font-weight: bold;
-    font-style: normal;
-  }
+	*,
+	*::before,
+	*::after {
+		box-sizing: inherit;
+	}
 
-  @font-face {
-    font-family: "ClearSans";
-    src: url("/fonts/ClearSans-BoldItalic.woff") format("woff");
-    font-weight: bold;
-    font-style: italic;
-  }
+	@font-face {
+		font-family: "ClearSans";
+		src: url("/fonts/ClearSans-Regular.woff") format("woff");
+		font-weight: normal;
+		font-style: normal;
+	}
 
-  @font-face {
-    font-family: "ClearSans";
-    src: url("/fonts/ClearSans-Italic.woff") format("woff");
-    font-weight: normal;
-    font-style: italic;
-  }
+	@font-face {
+		font-family: "ClearSans";
+		src: url("/fonts/ClearSans-Bold.woff") format("woff");
+		font-weight: bold;
+		font-style: normal;
+	}
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: "ClearSans", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.04em;
-    line-height: 1.4;
-    text-wrap: balance;
-    font-style: italic;
-  }
+	@font-face {
+		font-family: "ClearSans";
+		src: url("/fonts/ClearSans-BoldItalic.woff") format("woff");
+		font-weight: bold;
+		font-style: italic;
+	}
 
-  h1 {
-    font-size: var(--font-size-xxxl);
-  }
+	@font-face {
+		font-family: "ClearSans";
+		src: url("/fonts/ClearSans-Italic.woff") format("woff");
+		font-weight: normal;
+		font-style: italic;
+	}
 
-  h2 {
-    font-size: var(--font-size-xxl);
-  }
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-family: "ClearSans", sans-serif;
+		font-weight: 700;
+		letter-spacing: -0.04em;
+		margin-block: 0.2em;
+		line-height: 1.4;
+		text-wrap: balance;
+		font-style: italic;
+		/* Markdown Links show on hover */
+		--opacity: 0;
+		&:hover {
+			--opacity: 1;
+		}
+		a[href^="#"] {
+			display: inline-block;
+			height: 100%;
+			margin-left: 0.25rem;
+			opacity: var(--opacity);
+			&:before {
+				content: "#";
+			}
+		}
+	}
 
-  h3 {
-    font-size: var(--font-size-xl);
-  }
+	h1,
+	.h1 {
+		font-size: var(--font-size-xxxl);
+	}
 
-  h4 {
-    font-size: var(--font-size-lg);
-  }
+	h2,
+	.h2 {
+		font-size: var(--font-size-xxl);
+	}
 
-  h5 {
-    font-size: var(--font-size-md);
-  }
+	h3,
+	.h3 {
+		font-size: var(--font-size-xl);
+	}
 
-  h6,
-  p,
-  li {
-    font-size: var(--font-size-base);
-  }
+	h4,
+	.h4 {
+		font-size: var(--font-size-lg);
+	}
 
-  html {
-    font-size: "ClearSans", sans-serif;
-  }
+	h5,
+	.h5 {
+		font-size: var(--font-size-md);
+	}
 
-  body {
-    padding: 0;
-    margin: 0;
-  }
+	.h6,
+	h6,
+	p,
+	li {
+		font-size: var(--font-size-base);
+	}
 
-  a {
-    text-decoration: none;
-  }
+	html {
+		font-size: "ClearSans", sans-serif;
+	}
 
-  a:hover {
-    cursor: pointer;
-  }
+	body {
+		padding: 0;
+		margin: 0;
+	}
 
-  :is(p, li) a {
-    color: #000;
-    text-decoration: underline;
-    text-decoration-color: var(--primary) #1f3de6;
-    text-decoration-thickness: 1.5px;
-  }
+	a,
+	.a {
+		text-decoration: none;
+	}
 
-  p {
-    line-height: 1.7;
-    font-weight: 500;
-  }
+	a:hover {
+		cursor: pointer;
+	}
 
-  li {
-    line-height: 2.2;
-    list-style-type: circle;
-  }
+	:is(p, li) a {
+		color: #000;
+		text-decoration: underline;
+		text-decoration-color: var(--brand-accent) #1f3de6;
+		text-decoration-thickness: 1.5px;
+	}
 
-  ol li {
-    list-style-type: decimal;
-  }
+	p {
+		line-height: 1.5;
+		font-weight: 500;
+	}
 
-  body {
-    margin: 0 auto;
-    width: 100%;
-    max-width: 800px;
-    padding: 1rem;
-    line-height: 1.5;
-  }
+	li {
+		line-height: 2.2;
+		list-style-type: circle;
+	}
+
+	ol li {
+		list-style-type: decimal;
+	}
+
+	body {
+		margin: 0 auto;
+		width: 100%;
+		max-width: 800px;
+		padding: 1rem;
+		line-height: 1.5;
+	}
 }

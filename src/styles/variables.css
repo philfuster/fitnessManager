@@ -1,19 +1,91 @@
 :root {
-  --default_padding: 1rem;
+	--default_padding: 1rem;
 
-  /* Screen Sizes */
-  --screen-sm: 550px;
-  --screen-md: 1100px;
-  --screen-lg: 1500px;
-  --screen-xl: 1500px;
+	/* Screen Sizes */
+	--screen-sm: 550px;
+	--screen-md: 1100px;
+	--screen-lg: 1500px;
+	--screen-xl: 1500px;
 
-  /* Typography */
-  --font-size-xs: clamp(0.6rem, 0.17vw + 0.76rem, 0.7rem);
-  --font-size-sm: clamp(0.8rem, 0.17vw + 0.76rem, 0.89rem);
-  --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
-  --font-size-md: clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem);
-  --font-size-lg: clamp(1.56rem, 1vw + 1.31rem, 2.11rem);
-  --font-size-xl: clamp(1.95rem, 1.56vw + 1.56rem, 2.81rem);
-  --font-size-xxl: clamp(2.44rem, 2.38vw + 1.85rem, 3rem);
-  --font-size-xxxl: clamp(2.85rem, 3.40vw + 2.47rem, 3.5rem);
+	/* Typography */
+	--body-font-family: "ClearSans", sans-serif;
+	--heading-font-family: "ClearSans", sans-serif;
+	--font-size-xs: clamp(0.563rem, 0.16vw + 0.713rem, 0.656rem);
+	--font-size-sm: clamp(0.75rem, 0.16vw + 0.713rem, 0.834rem);
+	--font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem); /* Base font size set to 16px */
+	--font-size-md: clamp(1.25rem, 0.61vw + 1.1rem, 1.59rem);
+	--font-size-lg: clamp(1.563rem, 1vw + 1.313rem, 2.125rem);
+	--font-size-xl: clamp(1.953rem, 1.563vw + 1.563rem, 2.813rem);
+	--font-size-xxl: clamp(2.438rem, 2.385vw + 1.854rem, 3.75rem);
+	--font-size-xxxl: clamp(2.875rem, 3.41vw + 2.469rem, 4.375rem);
+
+	/* Color System */
+	--clr-brand-hue: 249.13;
+	--clr-neutral-100: oklch(97% 0.01 var(--clr-brand-hue));
+	--clr-neutral-200: oklch(89% 0.01 var(--clr-brand-hue));
+	--clr-neutral-300: oklch(80% 0.01 var(--clr-brand-hue));
+	--clr-neutral-400: oklch(71% 0.01 var(--clr-brand-hue));
+	--clr-neutral-500: oklch(60% 0.01 var(--clr-brand-hue));
+	--clr-neutral-600: oklch(49% 0.01 var(--clr-brand-hue));
+	--clr-neutral-700: oklch(38% 0.01 var(--clr-brand-hue));
+	--clr-neutral-800: oklch(25% 0.01 var(--clr-brand-hue));
+	--clr-neutral-900: oklch(12% 0.01 var(--clr-brand-hue));
+
+	--clr-brand-100: oklch(97% 0.016 var(--clr-brand-hue));
+	--clr-brand-200: oklch(89% 0.05 var(--clr-brand-hue));
+	--clr-brand-300: oklch(80% 0.105 var(--clr-brand-hue));
+	--clr-brand-400: oklch(71% 0.159 var(--clr-brand-hue));
+	--clr-brand-500: oklch(60% 0.166 var(--clr-brand-hue));
+	--clr-brand-600: oklch(49% 0.136 var(--clr-brand-hue));
+	--clr-brand-700: oklch(38% 0.12 var(--clr-brand-hue));
+	--clr-brand-800: oklch(25% 0.05 var(--clr-brand-hue));
+	--clr-brand-900: oklch(12% 0.02 var(--clr-brand-hue));
+
+	--clr-success-100: oklch(97% 0.016 150);
+	--clr-success-200: oklch(89% 0.05 150);
+	--clr-success-300: oklch(80% 0.105 150);
+	--clr-success-400: oklch(71% 0.159 150);
+	--clr-success-500: oklch(60% 0.166 150);
+	--clr-success-600: oklch(49% 0.136 150);
+	--clr-success-700: oklch(38% 0.12 150);
+	--clr-success-800: oklch(25% 0.05 150);
+	--clr-success-900: oklch(12% 0.02 150);
+
+	--clr-warning-100: oklch(97% 0.016 80);
+	--clr-warning-200: oklch(89% 0.05 80);
+	--clr-warning-300: oklch(80% 0.105 80);
+	--clr-warning-400: oklch(71% 0.159 80);
+	--clr-warning-500: oklch(60% 0.166 80);
+	--clr-warning-600: oklch(49% 0.136 80);
+	--clr-warning-700: oklch(38% 0.12 80);
+	--clr-warning-800: oklch(25% 0.05 80);
+	--clr-warning-900: oklch(12% 0.02 80);
+
+	--clr-error-100: oklch(97% 0.016 20);
+	--clr-error-200: oklch(89% 0.05 20);
+	--clr-error-300: oklch(80% 0.105 20);
+	--clr-error-400: oklch(71% 0.159 20);
+	--clr-error-500: oklch(60% 0.166 20);
+	--clr-error-600: oklch(49% 0.136 20);
+	--clr-error-700: oklch(38% 0.12 20);
+	--clr-error-800: oklch(25% 0.05 20);
+	--clr-error-900: oklch(12% 0.02 20);
+
+	/* Neutral color design tokens */
+	--clr-background: var(--clr-neutral-100);
+	--clr-text: var(--clr-neutral-800);
+	--clr-text-invert: var(--clr-neutral-200);
+
+	/* Non-neutral color design tokens */
+	--clr-brand-accent: var(--clr-brand-700);
+	--clr-brand-background: var(--clr-brand-200);
+	--clr-success-accent: var(--clr-success-700);
+	--clr-success-background: var(--clr-success-200);
+	--clr-warning-accent: var(--clr-warning-700);
+	--clr-warning-background: var(--clr-warning-200);
+	--clr-error-accent: var(--clr-error-700);
+	--clr-error-background: var(--clr-error-200);
+
+	--default_padding: 16px;
+	--brad: 5px;
 }
