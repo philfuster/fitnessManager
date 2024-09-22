@@ -7,48 +7,15 @@ export const Route = createLazyRoute('/')({
 function Index() {
 	return (
 		<>
-			<h1>Welcome to Fitness Manager</h1>
+			<h1>Fitness Manager</h1>
 			<section>
 				<p>Document your fitness journey here.</p>
-				<p>You can:</p>
-				<ul>
-					<li>
-						Create{' '}
-						<strong>
-							<em>Workout Templates</em>
-						</strong>
-					</li>
-					<li>
-						Create{' '}
-						<strong>
-							<em>Exercises</em>
-						</strong>
-					</li>
-					<li>
-						Add{' '}
-						<strong>
-							<em>Exercises</em>
-						</strong>{' '}
-						to{' '}
-						<strong>
-							<em>Workout Templates</em>
-						</strong>
-					</li>
-					<li>
-						Create{' '}
-						<strong>
-							<em>Workout Instances</em>
-						</strong>{' '}
-						from{' '}
-						<strong>
-							<em>Workout Templates</em>
-						</strong>
-					</li>
-					<li>Fill out the template during/after the work out</li>
-					<li>Add/remove exercises in a workout</li>
-					<li>Adjust sets/weight/reps</li>
-					<li>View workout metrics</li>
-				</ul>
+				<p>
+					Create Re-usable workout templates with the exercises you intend to perform. Detail the
+					weight, repetitions, and sets for each exercise. Create workout instances from these
+					templates and fill them out during/after your workout. Modify the current workout as
+					necessary and view workout metrics to track your progress.
+				</p>
 			</section>
 		</>
 	);
