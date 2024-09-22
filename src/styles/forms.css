@@ -7,7 +7,7 @@
 		gap: 10px;
 		background: var(--clr-brand-background);
 		border-radius: var(--brad);
-		padding: 2rem;
+		padding: 1.25rem;
 	}
 
 	.formGroup {
@@ -22,14 +22,20 @@
 		color: var(--clr-text-invert);
 	}
 
-	input {
+	input,
+	textarea {
 		padding: 10px 16px;
 		border-radius: var(--brad);
 		border: 1.5px solid var(--clr-brand-accent);
+		line-height: 1.5;
 		&:focus {
 			outline: none;
 			border-color: var(--clr-brand-500);
 		}
+	}
+
+	textarea {
+		resize: none;
 	}
 
 	label {
