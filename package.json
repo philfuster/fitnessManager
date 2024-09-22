@@ -12,7 +12,7 @@
 		"lint:fix": "biome lint --write --diagnostic-level=warn .",
 		"preview": "vite preview",
 		"typecheck": "tsc --noEmit && echo 'No type errors.'",
-		"test": "vitest",
+		"test": "vitest run",
 		"coverage": "vitest run --coverage",
 		"test:ui": "vitest run --ui"
 	},
@@ -37,6 +37,7 @@
 		"@types/react": "^18.3.5",
 		"@types/react-dom": "^18.3.0",
 		"@vitejs/plugin-react": "^4.3.1",
+		"@vitest/coverage-v8": "^2.1.1",
 		"@vitest/ui": "^2.1.1",
 		"jsdom": "^25.0.1",
 		"lightningcss": "^1.27.0",
