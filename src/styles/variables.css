@@ -10,14 +10,14 @@
 	/* Typography */
 	--body-font-family: "ClearSans", sans-serif;
 	--heading-font-family: "ClearSans", sans-serif;
-	--font-size-xs: clamp(0.675rem, 0.19vw + 0.855rem, 0.7875rem);
-	--font-size-sm: clamp(0.9rem, 0.19vw + 0.855rem, 1.00125rem);
-	--font-size-base: clamp(1.125rem, 0.3825vw + 1.02375rem, 1.3425rem);
-	--font-size-md: clamp(1.40625rem, 0.68625vw + 1.2375rem, 1.785rem);
-	--font-size-lg: clamp(1.755rem, 1.125vw + 1.4775rem, 2.38125rem);
-	--font-size-xl: clamp(2.1875rem, 1.755vw + 1.755rem, 3.15rem);
-	--font-size-xxl: clamp(2.73125rem, 2.6775vw + 2.08125rem, 3.375rem);
-	--font-size-xxxl: clamp(3.1875rem, 3.825vw + 2.7675rem, 3.9375rem);
+	--font-size-xs: clamp(0.563rem, 0.16vw + 0.713rem, 0.656rem);
+	--font-size-sm: clamp(0.75rem, 0.16vw + 0.713rem, 0.834rem);
+	--font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem); /* Base font size set to 16px */
+	--font-size-md: clamp(1.25rem, 0.61vw + 1.1rem, 1.59rem);
+	--font-size-lg: clamp(1.563rem, 1vw + 1.313rem, 2.125rem);
+	--font-size-xl: clamp(1.953rem, 1.563vw + 1.563rem, 2.813rem);
+	--font-size-xxl: clamp(2.438rem, 2.385vw + 1.854rem, 3.75rem);
+	--font-size-xxxl: clamp(2.875rem, 3.41vw + 2.469rem, 4.375rem);
 
 	/* Color System */
 	--clr-brand-hue: 249.13;
