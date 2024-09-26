@@ -7,8 +7,8 @@ import { Input } from '#components/Input';
 import { TextArea } from '#components/TextArea';
 
 const exerciseCreateFormSchema = z.object({
-	exerciseName: z.string().min(1, 'Required').max(250),
-	exerciseDescription: z.string().min(1, 'Required').max(500),
+	exerciseName: z.string().trim().min(1, 'Required').max(250),
+	exerciseDescription: z.string().trim().min(1, 'Required').max(500),
 	defaultRepetitions: z.coerce.number().positive().min(1),
 	defaultSets: z.coerce.number().positive().min(1),
 });
@@ -24,7 +24,13 @@ function ExerciseCreateForm() {
 			defaultRepetitions: 1,
 			defaultSets: 1,
 		},
+		mode: 'onTouched',
 	});
+	const {
+		handleSubmit,
+		control,
+		formState: { isValid, isSubmitted, isDirty },
+	} = form;
 
 	function onSubmit(values: ExerciseCreateFormSchema) {
 		console.log(values);
@@ -32,9 +38,12 @@ function ExerciseCreateForm() {
 
 	return (
 		<Form {...form}>
-			<form onSubmit={form.handleSubmit(onSubmit)}>
+			<form onSubmit={handleSubmit(onSubmit)}>
+				{!isValid && isSubmitted && (
+					<span className="textDestructive">Please address the errors below</span>
+				)}
 				<FormField
-					control={form.control}
+					control={control}
 					name="exerciseName"
 					render={({ field }) => (
 						<FormItem className="formItemLayout">
@@ -49,7 +58,7 @@ function ExerciseCreateForm() {
 					)}
 				/>
 				<FormField
-					control={form.control}
+					control={control}
 					name="exerciseDescription"
 					render={({ field }) => (
 						<FormItem className="formItemLayout">
@@ -65,7 +74,7 @@ function ExerciseCreateForm() {
 				/>
 				<h2 className="h4">Defaults</h2>
 				<FormField
-					control={form.control}
+					control={control}
 					name="defaultRepetitions"
 					render={({ field }) => (
 						<FormItem className="formItemLayout">
@@ -80,7 +89,7 @@ function ExerciseCreateForm() {
 					)}
 				/>
 				<FormField
-					control={form.control}
+					control={control}
 					name="defaultSets"
 					render={({ field }) => (
 						<FormItem className="formItemLayout">
@@ -94,7 +103,7 @@ function ExerciseCreateForm() {
 						</FormItem>
 					)}
 				/>
-				<button type="submit" className="formButton">
+				<button type="submit" className="formButton" disabled={!isDirty && !isValid}>
 					Submit
 				</button>
 			</form>
